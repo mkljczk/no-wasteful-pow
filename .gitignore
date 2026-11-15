@@ -1,2 +1,4 @@
-_metadata/
-anubypass*.zip
+xcuserdata/
+DerivedData/
+build/
+.DS_Store

@@ -1,30 +1,20 @@
+No Wasteful PoW
+===============
 
-Anubypass
-=========
+A Safari extension for macOS and iOS that skips proof-of-work challenges, saving your time and battery.
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/socram8888/anubypass/refs/heads/master/logo/full.svg" height="200">
-</p>
+The extension works by doing the following:
 
-A Chrome and Firefox extension to bypass [Anubis](https://anubis.techaro.lol/)'
-protection, saving your time and battery!
+1. A content script checks every page for PoW challenges (currently Anubis).
+2. When it finds one, that host gets added to a rule that sends a fake user agent, and the page reloads without the challenge.
+3. From then on, that host never sees your real User-Agent.
 
-Anubis analyzes your browser's User Agent header. If you are on JavaScript-enabled browser,
-it forces you a challenge before letting you through. On the contrary, if you are not, it
-simply lets you walk through undisturbed.
+If you are a sysadmin and think that it's acceptable to make users wait while wasting precious system resources on a protection so trivial to bypass that took the original author around 100 lines of code, you should consider switching to a crypto miner. At least you'd get some cash instead of a false sense of security.
 
-To exploit this behaviour, this extension uses [a list of known protected websites](hosts.json)
-for which, instead of sending your real browser User Agent that Anubis will know is JS-capable,
-it sends instead a unique randomized User Agent that changes every four hours.
+Credits
+-------
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/socram8888/anubypass/refs/heads/master/screenshot.png" height="400">
-</p>
-
-If you are a sysadmin and think that it's acceptable to make users wait while wasting precious
-system resources on a protection so trivial to bypass that it took me around 100 lines of code, you
-should consider switching to a crypto miner. At least you'd get some cash instead of a false sense
-of security.
+Based on [Anubypass](https://github.com/socram8888/anubypass) by socram8888.
 
 License
 -------

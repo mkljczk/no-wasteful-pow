@@ -1,0 +1,38 @@
+{
+	"manifest_version": 3,
+	"name": "No Wasteful PoW",
+	"version": "1.0",
+	"description": "Skips Anubis' proof-of-work challenges by spoofing the browser's user agent on sites that use it.",
+	"icons": {
+		"512": "logo/icon.png"
+	},
+	"action": {
+		"default_title": "No Wasteful PoW",
+		"default_popup": "popup.html",
+		"default_icon": {
+			"512": "logo/icon.png"
+		}
+	},
+	"permissions": [
+		"declarativeNetRequest",
+		"declarativeNetRequestWithHostAccess",
+		"storage"
+	],
+	"background": {
+		"service_worker": "background.js"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"<all_urls>"
+			],
+			"js": [
+				"detect.js"
+			],
+			"run_at": "document_end"
+		}
+	],
+	"host_permissions": [
+		"<all_urls>"
+	]
+}
